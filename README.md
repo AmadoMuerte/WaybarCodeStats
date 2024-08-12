@@ -1,7 +1,7 @@
 ## WakaTime Module for Waybar
 
 ### Overview
-The WakaTime Module for Waybar integrates WakaTime with Waybar, allowing you to track your coding activity and display the time spent coding directly on your bar.
+The <a href='https://wakatime.com/'>WakaTime<a/> Module for Waybar integrates WakaTime with Waybar, allowing you to track your coding activity and display the time spent coding directly on your bar.
 
 > **Note:** To use this module, you must have the WakaTime plugin installed in one of your IDEs. Additionally, a `.wakatime.conf` file should exist in your root directory.
 
