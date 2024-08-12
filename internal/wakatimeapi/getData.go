@@ -13,7 +13,7 @@ type Api struct {
 }
 
 func (a *Api) GetData() models.Response {
-	url := "https://api.wakatime.com/api/v1/users/current/all_time_since_today"
+	url := "https://api.wakatime.com/api/v1/users/current/status_bar/today"
 
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)

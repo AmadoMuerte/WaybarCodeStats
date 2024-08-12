@@ -37,7 +37,7 @@ func main() {
 	api := wakatimeapi.Api{AuthToken: token}
 
 	res := api.GetData()
-	dailySeconds := res.Data.DailyAverage
+	dailySeconds := res.Data.GrandTotal.TotalSeconds
 	time := timeconv.SecondToTime(dailySeconds)
 	translation := lang.GetTranslation(argLang)
 
