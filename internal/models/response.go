@@ -7,7 +7,7 @@ type Data struct {
 	Text              string  `json:"text"`
 	Decimal           string  `json:"decimal"`
 	Digital           string  `json:"digital"`
-	DailyAverage      int     `json:"daily_average"`
+	DailyAverage      float64 `json:"daily_average"`
 	IsUpToDate        bool    `json:"is_up_to_date"`
 	PercentCalculated int     `json:"percent_calculated"`
 	Range             Range   `json:"range"`
