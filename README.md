@@ -17,7 +17,7 @@ cd WakaTimeModule && go mod tidy && go build ./cmd/main.go
 
 2. Configure the module in your Waybar `config.jsonc` file:
 
-```json
+```jsonc
 "custom/wakatime": {
   "format": "{}{}",
   "return-type": "json",
