@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/AmadoMuerte/WakaTimeModule/internal/filereader"
 	"github.com/AmadoMuerte/WakaTimeModule/internal/lang"
 	"github.com/AmadoMuerte/WakaTimeModule/internal/models"
 	"github.com/AmadoMuerte/WakaTimeModule/internal/timeconv"
 	"github.com/AmadoMuerte/WakaTimeModule/internal/wakatimeapi"
 	"github.com/AmadoMuerte/WakaTimeModule/internal/waybar"
 	"os"
+	"path/filepath"
 )
 
 func main() {
@@ -19,9 +21,20 @@ func main() {
 		argLang = "en"
 	}
 
-	api := wakatimeapi.Api{
-		AuthToken: "TOKEN",
+	homeDir, err := os.UserHomeDir()
+	file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
 	}
+
+	token, err := filereader.ReadToken(file)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	api := wakatimeapi.Api{AuthToken: token}
 
 	res := api.GetData()
 	dailySeconds := res.Data.DailyAverage
