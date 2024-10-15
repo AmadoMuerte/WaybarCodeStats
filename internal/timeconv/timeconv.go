@@ -1,6 +1,6 @@
 package timeconv
 
-import "github.com/AmadoMuerte/WakaTimeModule/internal/models"
+import "github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 import "math"
 
 func SecondToTime(second float64) models.Time {

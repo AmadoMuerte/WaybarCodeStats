@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/filereader"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/lang"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/models"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/timeconv"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/wakatimeapi"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/waybar"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/filereader"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/lang"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/models"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/timeconv"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/wakatimeapi"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/waybar"
 	"os"
 	"path/filepath"
 )

@@ -3,7 +3,7 @@ package waybar
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/AmadoMuerte/WakaTimeModule/internal/models"
+	"github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 	"os"
 )
 

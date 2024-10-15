@@ -1,6 +1,6 @@
 package lang
 
-import "github.com/AmadoMuerte/WakaTimeModule/internal/models"
+import "github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 
 func GetTranslation(lang string) models.Translation {
 	switch lang {

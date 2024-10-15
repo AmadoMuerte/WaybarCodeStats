@@ -11,7 +11,7 @@ The <a href='https://wakatime.com/'>WakaTime<a/> Module for Waybar integrates Wa
 ```bash
 # You can build a standalone executable file using Go, if desired
 # Please ensure you have Go installed first
-cd WakaTimeModule && go mod tidy && go build ./cmd/main.go
+cd WaybarCodeStats && go mod tidy && go build ./cmd/main.go
 # This will generate an executable file named 'main' in the root of the module
 ```
 
@@ -22,9 +22,9 @@ cd WakaTimeModule && go mod tidy && go build ./cmd/main.go
   "format": "{}{}",
   "return-type": "json",
   // Specify the path to the built executable
-  "exec": "~/.config/waybar/WakaTimeModule/main en", // You can explicitly set the language for display (ru/en)
+  "exec": "~/.config/waybar/WaybarCodeStats/main en", // You can explicitly set the language for display (ru/en)
   // Alternatively, run the Go file directly
-  // "exec": "cd ~/.config/waybar/WakaTimeModule && go run ./cmd/main.go en"
+  // "exec": "cd ~/.config/waybar/WaybarCodeStats && go run ./cmd/main.go en"
   "interval": 1200
 },
 ```
