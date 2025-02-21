@@ -28,8 +28,15 @@ jobs:
         GOARCH: ${{ matrix.goarch }}
       run: go build -o bin/waybar-code-stats cmd/main.go
 
+    - name: Create zip archive
+      run: |
+        mkdir -p release
+        cp bin/waybar-code-stats release/waybar-code-stats
+        zip -r waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}.zip release
+        rm -rf release
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}
-        path: waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}
+        name: waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}.zip
+        path: waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}.zip
