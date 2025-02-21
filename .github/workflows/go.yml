@@ -41,5 +41,5 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: waybar-code-stats
-        path: release/*.zip
+        name: waybar-code-stats-${{ matrix.goos }}-${{ matrix.goarch }}
+        path: release/${{ matrix.goos }}-${{ matrix.goarch }}.zip
