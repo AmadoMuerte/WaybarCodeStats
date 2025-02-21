@@ -27,11 +27,19 @@ jobs:
         GOOS: ${{ matrix.goos }}
         GOARCH: ${{ matrix.goarch }}
       run: |
-        mkdir -p bin/${{ matrix.goos }}-${{ matrix.goarch }}
-        go build -o bin/${{ matrix.goos }}-${{ matrix.goarch }}/waybar-code-stats cmd/main.go
+        mkdir -p release/${{ matrix.goos }}-${{ matrix.goarch }}
+        go build -o release/${{ matrix.goos }}-${{ matrix.goarch }}/waybar-code-stats cmd/main.go
+
+    - name: Create archives
+      run: |
+        cd release
+        for dir in *; do
+          zip -r "${dir}.zip" "$dir"
+        done
+        cd ..
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: waybar-code-stats
-        path: bin
+        path: release/*.zip
