@@ -6,25 +6,24 @@ The <a href='https://wakatime.com/'>WakaTime<a/> Module for Waybar integrates Wa
 > **Note:** To use this module, you must have the WakaTime plugin installed in one of your IDEs. Additionally, a `.wakatime.conf` file should exist in your root directory.
 
 ### Installation
-1. Clone this repository into your Waybar configuration directory (typically `~/.config/waybar/`):
+1. Download the release archive and unzip it.
 
+2. Grant execute permissions to the binary file:
 ```bash
-# You can build a standalone executable file using Go, if desired
-# Please ensure you have Go installed first
-cd WaybarCodeStats && go mod tidy && go build ./cmd/main.go
-# This will generate an executable file named 'main' in the root of the module
+  chmod +x ./waybar-code-stats
+```
+3.Move the binary file to your Waybar configuration directory:
+```bash
+mv ./waybar-code-stats ~/.config/waybar/
 ```
 
-2. Configure the module in your Waybar `config.jsonc` file:
-
+4. Configure the module in your Waybar `config.jsonc` file:
 ```jsonc
 "custom/wakatime": {
   "format": "{}{}",
   "return-type": "json",
   // Specify the path to the built executable
-  "exec": "~/.config/waybar/WaybarCodeStats/main en", // You can explicitly set the language for display (ru/en)
-  // Alternatively, run the Go file directly
-  // "exec": "cd ~/.config/waybar/WaybarCodeStats && go run ./cmd/main.go en"
+  "exec": "~/.config/waybar/waybar-code-stats en", // You can explicitly set the language for display (ru/en)
   "interval": 1200
 },
 ```
@@ -43,4 +42,6 @@ padding-left: 7px;
 ```
 
 ### Contribution
-Feel free to submit issues or pull requests to contribute to the development of this module.
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to:
+* Submit an issue on the <a href='https://github.com/AmadoMuerte/WaybarCodeStats'>GitHub repository</a>.
+* Open a pull request with your changes.
