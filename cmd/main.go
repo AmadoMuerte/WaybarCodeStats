@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
+
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/filereader"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/lang"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/timeconv"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/wakatimeapi"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/waybar"
-	"os"
-	"path/filepath"
 )
 
 func main() {
@@ -24,13 +25,13 @@ func main() {
 	homeDir, err := os.UserHomeDir()
 	file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("wakatime auth file is not exists", err)
 		os.Exit(1)
 	}
 
 	token, err := filereader.ReadToken(file)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("wakatime auth token is not exists", err)
 		os.Exit(1)
 	}
 

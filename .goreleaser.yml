@@ -1,0 +1,24 @@
+project_name: waybar-code-stats
+
+builds:
+  - os: linux
+    arch: amd64
+    goarch: amd64
+    goos: linux
+  - os: linux
+    arch: arm64
+    goarch: arm64
+    goos: linux
+  - os: windows
+    arch: amd64
+    goarch: amd64
+    goos: windows
+  - os: darwin
+    arch: amd64
+    goarch: amd64
+    goos: darwin
+
+archive:
+  format: tar.gz
+  files:
+    - waybar-code-stats
