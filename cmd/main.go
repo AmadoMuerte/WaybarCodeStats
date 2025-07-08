@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	// "path/filepath"
 
-	// "github.com/AmadoMuerte/WaybarCodeStats/internal/filereader"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/lang"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/timeconv"
@@ -22,18 +20,11 @@ func main() {
 		argLang = "en"
 	}
 
-	if args[2] == '' {
-		fmt.Println("wakatime auth token is not exists", err)
+	if len(args) <= 2 || args[2] == "" {
+		fmt.Println("wakatime auth token is not exists")
 		os.Exit(1)
 	}
 	
-	// homeDir, err := os.UserHomeDir()
-	// file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
-	// if err != nil {
-	// 	fmt.Println("wakatime auth file is not exists", err)
-	// 	os.Exit(1)
-	// }
-
 	token := args[2]
 
 	api := wakatimeapi.Api{AuthToken: token}
