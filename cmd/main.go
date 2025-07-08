@@ -23,11 +23,10 @@ func main() {
 	}
 
 	if args[2] == '' {
-		fmt.Println("API key is not set.")
-		return
+		fmt.Println("wakatime auth token is not exists", err)
+		os.Exit(1)
 	}
-        apikey := args[2]
-
+	
 	// homeDir, err := os.UserHomeDir()
 	// file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
 	// if err != nil {
@@ -35,11 +34,7 @@ func main() {
 	// 	os.Exit(1)
 	// }
 
-	token, err := apikey
-	if err != nil {
-		fmt.Println("wakatime auth token is not exists", err)
-		os.Exit(1)
-	}
+	token := args[2]
 
 	api := wakatimeapi.Api{AuthToken: token}
 
