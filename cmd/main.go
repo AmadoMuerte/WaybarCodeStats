@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
+	// "path/filepath"
 
-	"github.com/AmadoMuerte/WaybarCodeStats/internal/filereader"
+	// "github.com/AmadoMuerte/WaybarCodeStats/internal/filereader"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/lang"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/models"
 	"github.com/AmadoMuerte/WaybarCodeStats/internal/timeconv"
