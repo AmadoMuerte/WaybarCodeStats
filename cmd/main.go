@@ -22,14 +22,20 @@ func main() {
 		argLang = "en"
 	}
 
-	homeDir, err := os.UserHomeDir()
-	file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
-	if err != nil {
-		fmt.Println("wakatime auth file is not exists", err)
-		os.Exit(1)
+	if (args[2] == '' {
+		fmt.Println("API key is not set.")
+		return
 	}
+        apikey string = args[2]
 
-	token, err := filereader.ReadToken(file)
+	// homeDir, err := os.UserHomeDir()
+	// file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
+	// if err != nil {
+	// 	fmt.Println("wakatime auth file is not exists", err)
+	// 	os.Exit(1)
+	// }
+
+	token, err := apikey
 	if err != nil {
 		fmt.Println("wakatime auth token is not exists", err)
 		os.Exit(1)
