@@ -22,11 +22,11 @@ func main() {
 		argLang = "en"
 	}
 
-	if (args[2] == '' {
+	if args[2] == '' {
 		fmt.Println("API key is not set.")
 		return
 	}
-        apikey string = args[2]
+        apikey := args[2]
 
 	// homeDir, err := os.UserHomeDir()
 	// file, err := filereader.FindFile(filepath.Join(homeDir, ".wakatime.cfg"))
