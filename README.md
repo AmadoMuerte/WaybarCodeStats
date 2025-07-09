@@ -23,7 +23,8 @@ mv ./waybar-code-stats ~/.config/waybar/
   "format": "{}{}",
   "return-type": "json",
   // Specify the path to the built executable
-  "exec": "~/.config/waybar/waybar-code-stats en", // You can explicitly set the language for display (ru/en)
+   // create a file with your wakatime api key and set
+  "exec": "bash -c 'echo $(<~/.config/waybar/wakatime.cfg) | xargs -I {} ~/.config/waybar/waybar-code-stats en {}'", // You can explicitly set the language for display (ru/en)
   "interval": 1200
 },
 ```
