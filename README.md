@@ -46,3 +46,5 @@ padding-left: 7px;
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to:
 * Submit an issue on the <a href='https://github.com/AmadoMuerte/WaybarCodeStats'>GitHub repository</a>.
 * Open a pull request with your changes.
+
+More projects: [amadomuerte.ru](https://amadomuerte.ru).
